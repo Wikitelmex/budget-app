@@ -1,0 +1,26 @@
+<div class="d-flex flex-column justify-content-start">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="d-flex flex-row justify-content-between align-items-center bg-primary position-sticky text-light", style="height: 50px;">
+      <div><-</div>
+      <div>LOGIN</div>
+      <div class="actions">
+        <%= f.submit "Log in", class: "bg-transparent border-0 text-light" %>
+      </div>
+    </div>
+    <br>
+
+    <div class="field form-floating">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control border-0 border-bottom", id: "email", placeholder: "name@mail.com" %>
+      <%= f.label :email, class: "text-muted" %>
+    </div>
+
+    <div class="field form-floating">
+      <%= f.password_field :password, autocomplete: "current-password", class: "form-control border-0 border-bottom", id: "password", placeholder: "password" %>
+      <%= f.label :password, class: "text-muted" %>
+    </div><br>
+  <% end %>
+
+  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+    <%= link_to "Forgot your password?", new_password_path(resource_name), class: "text-secondary text-center" %>
+  <% end %>
+</div>
