@@ -1,0 +1,28 @@
+<div class="d-flex flex-column justify-content-start">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="d-flex flex-row justify-content-between align-items-center bg-primary position-sticky text-light", style="height: 50px;">
+      <div><-</div>
+      <div>SIGNUP</div>
+      <div class="actions">
+        <%= f.submit "Sign up", class: "bg-transparent border-0 text-light" %>
+      </div>
+    </div>
+    <br>
+
+    <div class="field form-floating">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control border-0 border-bottom", id: "email", placeholder: "name@mail.com", required: true %>
+      <%= f.label :email, class: "text-muted form-label" %>
+    </div>
+
+    <div class="field form-floating">
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control border-0 border-bottom", id: "password", placeholder: "name@mail.com", required: true, minlength: "6" %>
+      <%= f.label :password, class: "text-muted", required: true %>
+    </div>
+
+    <div class="field form-floating">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control border-0 border-bottom", id: "password_confirmation", placeholder: "name@mail.com", required: true, minlength: "6" %>
+      <%= f.label :password_confirmation, class: "text-muted", required: true %>
+    </div>
+
+  <% end %>
+</div>
