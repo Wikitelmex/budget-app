@@ -1,0 +1,13 @@
+<div class="d-flex flex-row justify-content-between align-items-center bg-primary position-sticky text-light p-1", style="height: 50px;">
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <i class="fa-solid fa-bars"></i>
+  </a>
+  <div>HOME</div>
+  <div class="actions">
+    <%= button_to "Log in", homeauth_index_path, method: :get, class: "bg-transparent border-0 text-light" %>
+  </div>
+</div>
+<%= render "shared/sidebar" %>
+
+<h1>Homeauth#index</h1>
+<p>Find me in app/views/homeauth/index.html.erb</p>

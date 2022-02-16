@@ -17,3 +17,12 @@
 .bg-gray-light {
   background-color: #f5f6f8;
 }
+
+.min-vh-75 {
+  min-height: 75vh !important;
+}
+
+.bg-sidebar {
+  background: rgb(2,0,36);
+  background: linear-gradient(203deg, rgba(2,0,36,1) 0%, rgba(45,97,157,255) 55%, rgba(45,97,157,100) 100%);
+}
