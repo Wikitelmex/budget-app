@@ -1,0 +1,8 @@
+<%= render "navbar" %>
+
+<%= link_to "+ Category", new_group_path %>
+<div id="groups">
+  <% @groups.each do |group| %>
+    <%= render group %>
+  <% end %>
+</div>

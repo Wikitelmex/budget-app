@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   unauthenticated do
     root 'home#index', as: :unauthenticated_root
   end
+
+  resources :groups
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
