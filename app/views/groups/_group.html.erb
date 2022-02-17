@@ -1,9 +1,18 @@
-<div id="<%= dom_id group %>" class="card d-flex flex-row col-10 m-auto mb-2 shadow">
-  <img class="card-img-left col-4 border m-1" src="<%= group.icon %>" alt="Card image cap">
+<div id="<%= dom_id group %>" class="card d-flex flex-row col-12 m-auto mb-2 shadow">
+  <% if group.icon.attached? %>
+    <%= image_tag group.icon, class: "ard-img-left border m-1", style: "height: 7em; width: 7em;" %>
+  <% else %>
+    <img class="card-img-left border m-1" style="height: 7em; width: 7em;" src="https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101032/112815935-no-image-available-icon-flat-vector-illustration.jpg?ver=6" alt="Card image cap">
+  <% end %>
+  
   <div class="card-body col-5">
-    <h3 class="card-text"><%= group.name %></h3>
-    <p>
-      <%= link_to "Show this category", group %>
+    <p class="card-text">
+      <%= link_to group.name, group, class: "text-muted" %>
+    </p>
+  </div>
+  <div class="card-body col-3">
+    <p class="card-text">
+      <strong>$<%= group.entities.sum(:amount) %></strong>
     </p>
   </div>
 </div>

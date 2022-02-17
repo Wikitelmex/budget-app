@@ -11,11 +11,19 @@
     </div>
   <% end %>
 
-  <%= form.label :name %>
-  <%= form.text_field :name %><br>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %><br>
+  </div>
 
-  <%= form.label :icon %>
-  <%= form.text_field :icon %>
+  <div class="form-group">
+    <% if group.icon.attached? %>
+      <%= image_tag group.icon, style: "width: 200px; display: block" %>
+    <% end %>
+
+    <%= form.label :icon %>
+    <%= form.file_field :icon, class: "form-control" %>
+  </div>
 
   <div>
     <%= form.submit %>

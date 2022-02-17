@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.where(author_id: current_user.id)
+    @groups = Group.includes(:entities).where(author_id: current_user.id)
   end
 
   # GET /groups/1 or /groups/1.json
