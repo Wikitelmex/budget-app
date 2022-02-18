@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'groups/show', type: :view do
+RSpec.describe 'entities/show', type: :view do
   before(:each) do
-    @group = assign(:group, Group.create!)
+    @entity = assign(:entity, Entity.create!)
   end
 
   it 'renders attributes in <p>' do
