@@ -1,2 +1,24 @@
-<div id="<%= dom_id entity %>">
+<div id="<%= dom_id entity %>" class="card d-flex flex-col col-12 m-auto mb-2 shadow">
+  <div class="card-header">
+    <h3 class="card-text">
+      <%= link_to entity.name.capitalize, entity, class: "text-muted" %>
+    </h3>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      Date: <%= entity.created_at.strftime("%d/%h/%Y %I:%M %p") %>
+    </p>
+    <p class="card-text">
+      Amount: 
+      <strong>$<%= entity.amount %></strong>
+    </p>
+  </div>
+  <div class="card-footer">
+    <p class="card-text">
+      Groups:
+      <% entity.groups.each do |group| %>
+        <%= link_to group.name, group, class: "text-muted" %>
+      <% end %>
+    </p>
+  </div>
 </div>

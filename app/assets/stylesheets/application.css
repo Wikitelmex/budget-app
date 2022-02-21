@@ -26,3 +26,17 @@
   background: rgb(2,0,36);
   background: linear-gradient(203deg, rgba(2,0,36,1) 0%, rgba(45,97,157,255) 55%, rgba(45,97,157,100) 100%);
 }
+
+/*
+* Bootstrap theming
+*/
+:root {
+  --bs-primary-rgb: 55,120,194;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: rgba(var(--bs-primary-rgb))!important;;
+  border-color: rgba(var(--bs-primary-rgb))!important;;
+}
+

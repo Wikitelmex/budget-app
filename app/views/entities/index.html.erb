@@ -1,14 +1,19 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Entities</h1>
+<%= render "navbar" %>
+<div class="card">
+  <h2 class="card-header">Transactions Data:</h2>
+  <div class="card-body">
+    <p>Total amount: $<%= @entities.sum(:amount) %> </p>
+    <p>Total of transactions: <%= @entities.count %> </p>
+    <p>Average amount: $<%= @entities.average(:amount) %> </p>
+    <p>Maximum amount: $<%= @entities.maximum(:amount) %> </p>
+    <p>Minimum amount: $<%= @entities.minimum(:amount) %> </p>
+  </div>
+</div>
+<%= link_to "+ TRANSACTION", new_entity_path %>
+<h2>List: </h2>
 
 <div id="entities">
   <% @entities.each do |entity| %>
     <%= render entity %>
-    <p>
-      <%= link_to "Show this entity", entity %>
-    </p>
   <% end %>
 </div>
-
-<%= link_to "New entity", new_entity_path %>

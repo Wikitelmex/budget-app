@@ -1,6 +1,6 @@
 <div class="d-flex flex-column justify-content-start">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="d-flex flex-row justify-content-between align-items-center bg-primary position-sticky text-light p-1", style="height: 50px;">
+    <div class="d-flex flex-row justify-content-between align-items-center bg-primary fixed-top text-light p-1", style="height: 50px;">
       <%= link_to :back do %>
         <i class="fa-solid fa-arrow-left text-light"></i>
       <% end %>
@@ -9,7 +9,7 @@
         <%= f.submit "Log in", class: "bg-transparent border-0 text-light" %>
       </div>
     </div>
-    <br>
+    <br><br><br>
 
     <div class="field form-floating">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control border-0 border-bottom", id: "email", placeholder: "name@mail.com" %>
